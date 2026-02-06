@@ -1,0 +1,144 @@
+version: "2"
+linters:
+  enable:
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - contextcheck
+    - depguard
+    - dogsled
+    - dupl
+    - durationcheck
+    - errorlint
+    - forbidigo
+    - gocognit
+    - goconst
+    - godot
+#    - godox
+    - gomodguard
+    - goprintffuncname
+    - gosec
+    - importas
+    - misspell
+    - nakedret
+    - nestif
+    - nilerr
+#    - noctx
+    - nolintlint
+    - prealloc
+    - predeclared
+    - promlinter
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - testableexamples
+    - testpackage
+    - thelper
+    - tparallel
+    - unconvert
+    - unparam
+    - whitespace
+  settings:
+    depguard:
+      rules:
+        main:
+          files:
+            - $all
+            - '!$test'
+            - '!**/test/**/*'
+          allow:
+            - $gostd
+            - github.com
+          deny:
+            - pkg: golang.org/x/exp
+              desc: Please don't use experimental packages
+            - pkg: golang.org/x/net/context
+              desc: use context
+            - pkg: golang.org/x/exp
+              desc: Please don't use experimental packages
+        test:
+          files:
+            - $test
+          allow:
+            - $gostd
+            - github.com
+    revive:
+      rules:
+        - name: unused-parameter
+          disabled: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - contextcheck
+          - cyclop
+          - dupl
+          - err113
+          - errcheck
+          - errorlint
+          - exportloopref
+          - forcetypeassert
+          - funlen
+          - gochecknoglobals
+          - goconst
+          - gocyclo
+          - gosec
+          - lll
+        path: _test\.go
+      - linters:
+          - contextcheck
+          - cyclop
+          - dupl
+          - err113
+          - errcheck
+          - exportloopref
+          - forcetypeassert
+          - funlen
+          - gochecknoglobals
+          - goconst
+          - gocyclo
+          - gosec
+          - lll
+          - revive
+          - staticcheck
+        path: example.*_test\.go
+      - linters:
+          - contextcheck
+          - cyclop
+          - dupl
+          - err113
+          - errcheck
+          - exportloopref
+          - forcetypeassert
+          - funlen
+          - gochecknoglobals
+          - goconst
+          - gocyclo
+          - gosec
+          - lll
+          - testpackage
+          - unparam
+        path: test
+    paths:
+      - var
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
