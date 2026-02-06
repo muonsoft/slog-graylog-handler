@@ -1,5 +1,13 @@
 # Graylog Handler for [log/slog](https://pkg.go.dev/log/slog)
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/muonsoft/slog-graylog-handler.svg)](https://pkg.go.dev/github.com/muonsoft/slog-graylog-handler)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/muonsoft/slog-graylog-handler)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/muonsoft/slog-graylog-handler)
+![GitHub](https://img.shields.io/github/license/muonsoft/slog-graylog-handler)
+[![tests](https://github.com/muonsoft/slog-graylog-handler/actions/workflows/tests.yml/badge.svg)](https://github.com/muonsoft/slog-graylog-handler/actions/workflows/tests.yml)
+[![Coverage](https://gocover.io/_badge/github.com/muonsoft/slog-graylog-handler)](https://gocover.io/github.com/muonsoft/slog-graylog-handler)
+[![Go Report Card](https://goreportcard.com/badge/github.com/muonsoft/slog-graylog-handler)](https://goreportcard.com/report/github.com/muonsoft/slog-graylog-handler)
+
 Use this handler to send your logs to a [Graylog](http://graylog2.org) server via the GELF protocol (UDP, TCP, or HTTP).
 
 It implements `slog.Handler`, so you create a `slog.Logger` with it. All slog attributes are sent as additional GELF fields (prefixed with `_`).
