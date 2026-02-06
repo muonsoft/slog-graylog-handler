@@ -5,7 +5,6 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/muonsoft/slog-graylog-handler)
 ![GitHub](https://img.shields.io/github/license/muonsoft/slog-graylog-handler)
 [![tests](https://github.com/muonsoft/slog-graylog-handler/actions/workflows/tests.yml/badge.svg)](https://github.com/muonsoft/slog-graylog-handler/actions/workflows/tests.yml)
-[![Coverage](https://gocover.io/_badge/github.com/muonsoft/slog-graylog-handler)](https://gocover.io/github.com/muonsoft/slog-graylog-handler)
 [![Go Report Card](https://goreportcard.com/badge/github.com/muonsoft/slog-graylog-handler)](https://goreportcard.com/report/github.com/muonsoft/slog-graylog-handler)
 
 Use this handler to send your logs to a [Graylog](http://graylog2.org) server via the GELF protocol (UDP, TCP, or HTTP).
